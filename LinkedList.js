@@ -77,7 +77,6 @@ console.log(list.toString());
 
 list.append(0).append(1).prepend(8)
 console.log(list.toString())
-//console.log(arrayToList([6,7,8]).toString())
 console.log(listToArray(list))
 console.log(nth(list, 1))
 
