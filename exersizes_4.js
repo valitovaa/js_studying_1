@@ -125,4 +125,76 @@ console.log(list.toString())
 console.log(listToArray(list))
 console.log(nth(list, 1))
 
+4) глубокое сравнение
 
+function isEqual(a,b){
+    if(typeof(a) == 'object' && a != null){
+        if(typeof  b == 'object' && b != null){
+            console.log("object + object")
+
+                let a1 = []
+                let a2 = []
+                for(let i in a){
+                    a1.push(i)
+                    a2.push(a[i])
+                }
+                let b1 = []
+                let b2 = []
+                for(let i in b){
+                    b1.push(i)
+                    b2.push(b[i])
+                }
+
+                if(a1.length === b1.length){
+                    //continue
+                    for(i in a1){
+                        if(a1[i] === b1[i]){
+                            if(a2[i] === b2[i]){
+                                return true
+                            }
+                        }else{
+                            return false
+                        }
+                    }
+                }else{
+                    return false
+                }
+
+        }else{return false}
+    }else{
+        if(typeof a === typeof b){
+            return a===b
+
+        }else{
+            return false
+
+        }
+    }
+
+}
+
+
+console.log(isEqual(7,7))
+console.log(isEqual(ol, 9))
+console.log(isEqual(6, mark))
+isEqual(mark, ol)
+console.log(isEqual("j","n"))
+
+let s = "sf"
+let r = "sf"
+
+console.log(s===r)
+let f = {
+    tek: 9,
+    fgi: 0,
+}
+let tr = {
+    kk: 8,
+    hh: 4,
+}
+let u = {
+    tek: 9,
+    fgi: 0,
+}
+console.log(isEqual(f,tr))
+console.log(isEqual(f,u))
