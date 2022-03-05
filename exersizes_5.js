@@ -32,3 +32,16 @@ function loop(start, test, update, body) {
 }
 
 loop(3, n => n > 0, n => n - 1, console.log);
+
+3) every
+
+function every(array, predicate) {
+  for (let element of array) {
+    if (!predicate(element)) return false;
+  }
+  return true;
+}
+
+function every2(array, predicate) {
+  return !array.some(element => !predicate(element));
+}
