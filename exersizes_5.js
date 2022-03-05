@@ -22,3 +22,13 @@ function f(arrays){
 
 console.log(roll(mass))
 console.log(f(mass))
+
+2) ваш собственный цикл
+
+function loop(start, test, update, body) {
+    for (let value = start; test(value); value = update(value)) {
+        body(value);
+    }
+}
+
+loop(3, n => n > 0, n => n - 1, console.log);
